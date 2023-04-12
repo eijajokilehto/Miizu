@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mipsun Blogi</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="app.js">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <a href="/blogi.html">Blogi</a>
+          <li><a href="/tieto.html">Tietoa Minusta</a></li>
+          <li><a href="/galleria.html">Galleria</a></li>
+        </ul>
+      </nav>
+    </header>
+    <html>
+      <head> </head>
+      <body onload="startTime()">
+        <div id="txt"></div>
+        <script>
+        function startTime() {
+          const today = new Date();
+          let h = today.getHours();
+          let m = today.getMinutes();
+          let s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+          setTimeout(startTime, 1000);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+      
+      <body onload=display_ct();>
+        <span id='ct' ></span>
+      </body>
+      </html>
+    <main>
+      <h1>Tervetuloa Mipsun Blogiin!</h1>
+      <p>Täällä sinä löydät Mipsun ajatuksia ja pohdintoja eri aiheista. </p>
+
+      <section>
+        <h2>Viimeisimmät Postaukset</h2>
+        <ul>
+          <li>
+            <h3><a href="/kahvi.html">Kuinka valmistaa paras kuppi kahvia</a></h3>
+            <p>Vaiheittainen opas täydellisen kahvin valmistukseen.</p>
+          </li>
+          <li>
+            <h3><a href="/vaellus.html">Miksi Minä Rakastan Vaellusta</a></h3>
+            <p>Pohdintaa rakkaudestani ulkoilmaan ja miksi rakastan vaeltamista.</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright &copy; 2023 Mipsun Blogi</p>
+    </footer>
+  </body>
+</html>
